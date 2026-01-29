@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌿 Health & Wellness Tracker</h1>
+            <div class="date-display" id="dateDisplay"></div>
+        </header>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <h2>Today's Progress</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar">0%</div>
+            </div>
+            <div class="motivation-message" id="motivationMessage">
+                Start your journey today! 💪
+            </div>
+        </div>
+
+        <!-- Add Habit Form -->
+        <div class="add-habit-section">
+            <h2>Add New Habit</h2>
+            <form class="add-habit-form" id="addHabitForm">
+                <input 
+                    type="text" 
+                    id="habitInput" 
+                    placeholder="Enter a new healthy habit (e.g., Drink 8 glasses of water)"
+                    maxlength="50"
+                >
+                <button type="submit" class="btn btn-primary">Add Habit</button>
+            </form>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+
+        <!-- Habits List -->
+        <div class="habits-section">
+            <h2>My Habits</h2>
+            <div class="habits-list" id="habitsList">
+                <div class="empty-state">
+                    No habits yet. Add your first healthy habit above! 🎯
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekly Overview -->
+        <div class="weekly-section">
+            <h2>Weekly Overview (Click any day to view details)</h2>
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="legend-icon">✅</span>
+                    <span class="legend-text">All Complete</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon">🟡</span>
+                    <span class="legend-text">Partial</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon">❌</span>
+                    <span class="legend-text">None Done</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon">⚪</span>
+                    <span class="legend-text">No Habits</span>
+                </div>
+            </div>
+            <div class="weekly-grid" id="weeklyGrid"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Day Details -->
+    <div id="dayModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Day Details</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-progress">
+                <h3>Progress</h3>
+                <div class="modal-progress-bar-container">
+                    <div class="modal-progress-bar" id="modalProgressBar">0%</div>
+                </div>
+                <p id="modalProgressText" style="color: #8b4513; margin-top: 10px;"></p>
+            </div>
+            <div>
+                <h3 style="color: #8b4513; margin-bottom: 15px;">Habits</h3>
+                <div class="modal-habits-list" id="modalHabitsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
